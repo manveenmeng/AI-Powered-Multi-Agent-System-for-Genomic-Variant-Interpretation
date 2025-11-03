@@ -138,3 +138,38 @@ Key Requirements Demonstrated:
 # Create .env file
 cp .env.example .env
 # Edit .env with your API keys
+
+
+
+
+## 🔌 MCP Server
+
+GenomicsGPT includes a Model Context Protocol (MCP) server for tool integration:
+
+### Features
+- **Tool Discovery**: List all available genomics tools
+- **Standardized Invocation**: Call tools with consistent interface
+- **Health Monitoring**: Track system status
+- **Interactive Docs**: Swagger UI at `/docs`
+
+### Running the MCP Server
+```bash
+python src/mcp/mcp_server.py
+```
+
+Access the API at: http://localhost:8000
+Interactive docs: http://localhost:8000/docs
+
+### Example Usage
+```bash
+curl -X POST "http://localhost:8000/mcp/invoke" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tool_name": "variant-lookup",
+    "parameters": {"variant_id": "BRCA1"}
+  }'
+```
+
+### Available Tools
+- `variant-lookup`: Query variant databases
+- `gene-variants`: Get all variants in a gene
