@@ -53,7 +53,7 @@ Git
 
 Installation
 bash# Clone the repository
-git clone https://github.com/yourusername/genomics-gpt.git
+git clone https://github.com/manveenmeng/genomics-gpt.git
 cd genomics-gpt
 
 # Create virtual environment
